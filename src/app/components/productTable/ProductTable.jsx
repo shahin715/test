@@ -10,11 +10,6 @@ import { Pagination, PaginationContent, PaginationItem, PaginationLink, Paginati
 import { MoreHorizontal, ArrowUpDown, ArrowUp, ArrowDown } from "lucide-react";
 import AddProductForm from "./addProduct/page";
 
-// ---- Build a safe path to public/db.json (works on Vercel with/without basePath) ----
-const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ""; // e.g. "" or "/myapp"
-const DB_URL = `${BASE}/db.json`;
-
-// ---- Helpers ----
 const parseMoney = (v) => {
   if (typeof v === "number") return v;
   if (!v) return 0;
@@ -30,8 +25,6 @@ const parseMetric = (v) => {
   const num = parseFloat(m[1]);
   return s.includes("k") ? num * 1000 : num;
 };
-
-// Map localProducts (CRUD shape) -> table row shape used here
 const fromLocalProduct = (p) => ({
   id: p.id,
   name: p.name,
@@ -48,7 +41,7 @@ const fromLocalProduct = (p) => ({
 });
 
 export default function ProductTable() {
-  const [products, setProducts] = useState([]); // table-shape list
+  const [products, setProducts] = useState([]); // table-shape
   const [searchTerm, setSearchTerm] = useState("");
   const [sortField, setSortField] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
@@ -60,7 +53,7 @@ export default function ProductTable() {
 
   const fetchProducts = async () => {
     try {
-      // 1) localStorage cache (table-shape) — uses key "products" to avoid clashing with CRUD's "localProducts"
+      // 1) local cache for the table view
       let stored;
       try {
         stored = JSON.parse(localStorage.getItem("products") || "[]");
@@ -73,18 +66,12 @@ export default function ProductTable() {
         return;
       }
 
-      // 2) fetch public/db.json — cache bust + no-store to beat CDN caching
-      const res = await fetch(`${DB_URL}?v=${Date.now()}`, { cache: "no-store" });
+      // 2) server API -> always returns localProducts shape
+      const res = await fetch("/api/local-products", { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
+      const localProducts = await res.json();
 
-      // Accept both shapes: products[] (already table shape) or localProducts[] (CRUD shape)
-      const list = Array.isArray(data.products)
-        ? data.products
-        : Array.isArray(data.localProducts)
-        ? data.localProducts.map(fromLocalProduct)
-        : [];
-
+      const list = (localProducts || []).map(fromLocalProduct);
       setProducts(list);
       localStorage.setItem("products", JSON.stringify(list));
       setError(null);
@@ -116,7 +103,7 @@ export default function ProductTable() {
     }
   };
 
-  const filteredProducts = products.filter((p) => {
+  const filtered = products.filter((p) => {
     const q = searchTerm.toLowerCase();
     return (
       p.name?.toLowerCase().includes(q) ||
@@ -126,12 +113,11 @@ export default function ProductTable() {
     );
   });
 
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
+  const sorted = [...filtered].sort((a, b) => {
     if (!sortField) return 0;
     let aVal = a[sortField];
     let bVal = b[sortField];
 
-    // numeric fields which may be strings
     if (sortField === "price") {
       aVal = parseMoney(aVal);
       bVal = parseMoney(bVal);
@@ -150,8 +136,8 @@ export default function ProductTable() {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const current = sortedProducts.slice(indexOfFirstItem, indexOfLastItem);
-  const totalPages = Math.max(1, Math.ceil(sortedProducts.length / itemsPerPage));
+  const pageItems = sorted.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.max(1, Math.ceil(sorted.length / itemsPerPage));
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) setCurrentPage(page);
@@ -167,7 +153,9 @@ export default function ProductTable() {
       <div className="w-full overflow-x-auto">
         {error && <div className="p-4 bg-red-600 text-white rounded-md mb-4">{error}</div>}
         {products.length === 0 && !error && (
-          <div className="p-4 bg-yellow-600 text-white rounded-md mb-4">No products available. Add a product to get started.</div>
+          <div className="p-4 bg-yellow-600 text-white rounded-md mb-4">
+            No products available. Add a product to get started.
+          </div>
         )}
 
         <div className="flex items-center justify-between p-4 border border-zinc-700 bg-zinc-900 rounded-xl mb-4">
@@ -204,38 +192,18 @@ export default function ProductTable() {
           <TableHeader className="bg-zinc-800">
             <TableRow>
               <TableHead className="w-12 px-4 py-2 rounded-tl-xl"><Checkbox /></TableHead>
-              <TableHead>
-                <Button variant="ghost" onClick={() => handleSort("name")} className="flex items-center gap-1 px-0">
-                  NAME {renderSortIcon("name")}
-                </Button>
-              </TableHead>
-              <TableHead>
-                <Button variant="ghost" onClick={() => handleSort("category")} className="flex items-center gap-1 px-0">
-                  CATEGORY {renderSortIcon("category")}
-                </Button>
-              </TableHead>
+              <TableHead><Button variant="ghost" onClick={() => handleSort("name")} className="flex items-center gap-1 px-0">NAME {renderSortIcon("name")}</Button></TableHead>
+              <TableHead><Button variant="ghost" onClick={() => handleSort("category")} className="flex items-center gap-1 px-0">CATEGORY {renderSortIcon("category")}</Button></TableHead>
               <TableHead>BRAND</TableHead>
-              <TableHead>
-                <Button variant="ghost" onClick={() => handleSort("price")} className="flex items-center gap-1 px-0">
-                  PRICE {renderSortIcon("price")}
-                </Button>
-              </TableHead>
-              <TableHead>
-                <Button variant="ghost" onClick={() => handleSort("stockQuantity")} className="flex items-center gap-1 px-0">
-                  STOCK {renderSortIcon("stockQuantity")}
-                </Button>
-              </TableHead>
-              <TableHead>
-                <Button variant="ghost" onClick={() => handleSort("views")} className="flex items-center gap-1 px-0">
-                  VIEWS {renderSortIcon("views")}
-                </Button>
-              </TableHead>
+              <TableHead><Button variant="ghost" onClick={() => handleSort("price")} className="flex items-center gap-1 px-0">PRICE {renderSortIcon("price")}</Button></TableHead>
+              <TableHead><Button variant="ghost" onClick={() => handleSort("stockQuantity")} className="flex items-center gap-1 px-0">STOCK {renderSortIcon("stockQuantity")}</Button></TableHead>
+              <TableHead><Button variant="ghost" onClick={() => handleSort("views")} className="flex items-center gap-1 px-0">VIEWS {renderSortIcon("views")}</Button></TableHead>
               <TableHead className="w-12 px-4 text-right rounded-tr-xl"></TableHead>
             </TableRow>
           </TableHeader>
 
           <TableBody>
-            {current.map((product) => (
+            {pageItems.map((product) => (
               <TableRow key={product.id} className="hover:bg-zinc-700 transition">
                 <TableCell className="px-4"><Checkbox /></TableCell>
                 <TableCell className="py-3">
@@ -280,12 +248,8 @@ export default function ProductTable() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="bg-zinc-900 border border-zinc-700 text-gray-100">
-                      <DropdownMenuItem onClick={() => { setProductToEdit(product); setIsDialogOpen(true); }}>
-                        Edit
-                      </DropdownMenuItem>
-                      <DropdownMenuItem onClick={() => handleDelete(product.id)}>
-                        Delete
-                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => { setProductToEdit(product); setIsDialogOpen(true); }}>Edit</DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => handleDelete(product.id)}>Delete</DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </TableCell>
@@ -297,9 +261,7 @@ export default function ProductTable() {
         <div className="flex items-center justify-between p-4 border border-zinc-700 bg-zinc-900 rounded-xl mt-4">
           <Pagination>
             <PaginationContent>
-              <PaginationItem>
-                <PaginationPrevious href="#" onClick={() => handlePageChange(currentPage - 1)} />
-              </PaginationItem>
+              <PaginationItem><PaginationPrevious href="#" onClick={() => handlePageChange(currentPage - 1)} /></PaginationItem>
               {Array.from({ length: totalPages }, (_, i) => (
                 <PaginationItem key={i}>
                   <PaginationLink href="#" isActive={currentPage === i + 1} onClick={() => handlePageChange(i + 1)}>
@@ -307,16 +269,15 @@ export default function ProductTable() {
                   </PaginationLink>
                 </PaginationItem>
               ))}
-              <PaginationItem>
-                <PaginationNext href="#" onClick={() => handlePageChange(currentPage + 1)} />
-              </PaginationItem>
+              <PaginationItem><PaginationNext href="#" onClick={() => handlePageChange(currentPage + 1)} /></PaginationItem>
             </PaginationContent>
           </Pagination>
           <div className="text-sm text-gray-400">
-            {sortedProducts.length === 0 ? 0 : indexOfFirstItem + 1} - {Math.min(indexOfLastItem, sortedProducts.length)} of {sortedProducts.length} entries
+            {sorted.length === 0 ? 0 : indexOfFirstItem + 1} - {Math.min(indexOfLastItem, sorted.length)} of {sorted.length} entries
           </div>
         </div>
       </div>
     </div>
   );
 }
+
