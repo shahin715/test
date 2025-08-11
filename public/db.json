@@ -1,0 +1,721 @@
+{
+  "summary": [
+    {
+      "sales": 6.5,
+      "customers": 12,
+      "products": 47,
+      "revenue": 128,
+      "id": "ef65"
+    }
+  ],
+  "salesReport": {
+    "daily": [
+      {
+        "date": "10 Mar",
+        "value1": 80,
+        "value2": 60
+      },
+      {
+        "date": "11 Mar",
+        "value1": 70,
+        "value2": 50
+      },
+      {
+        "date": "12 Mar",
+        "value1": 85,
+        "value2": 20
+      },
+      {
+        "date": "13 Mar",
+        "value1": 65,
+        "value2": 40
+      },
+      {
+        "date": "14 Mar",
+        "value1": 40,
+        "value2": 20
+      },
+      {
+        "date": "15 Mar",
+        "value1": 75,
+        "value2": 55
+      },
+      {
+        "date": "16 Mar",
+        "value1": 90,
+        "value2": 30
+      },
+      {
+        "date": "17 Mar",
+        "value1": 60,
+        "value2": 45
+      },
+      {
+        "date": "18 Mar",
+        "value1": 80,
+        "value2": 50
+      },
+      {
+        "date": "19 Mar",
+        "value1": 60,
+        "value2": 25
+      },
+      {
+        "date": "20 Mar",
+        "value1": 90,
+        "value2": 35
+      },
+      {
+        "date": "21 Mar",
+        "value1": 50,
+        "value2": 40
+      }
+    ],
+    "monthly": [
+      {
+        "date": "Jan",
+        "value1": 600,
+        "value2": 400
+      },
+      {
+        "date": "Feb",
+        "value1": 700,
+        "value2": 500
+      },
+      {
+        "date": "Mar",
+        "value1": 850,
+        "value2": 200
+      },
+      {
+        "date": "Apr",
+        "value1": 650,
+        "value2": 400
+      },
+      {
+        "date": "May",
+        "value1": 400,
+        "value2": 200
+      },
+      {
+        "date": "Jun",
+        "value1": 750,
+        "value2": 550
+      },
+      {
+        "date": "Jul",
+        "value1": 600,
+        "value2": 400
+      },
+      {
+        "date": "Aug",
+        "value1": 700,
+        "value2": 500
+      },
+      {
+        "date": "Sep",
+        "value1": 850,
+        "value2": 200
+      },
+      {
+        "date": "Oct",
+        "value1": 650,
+        "value2": 400
+      },
+      {
+        "date": "Nov",
+        "value1": 400,
+        "value2": 200
+      },
+      {
+        "date": "Dec",
+        "value1": 750,
+        "value2": 550
+      }
+    ],
+    "yearly": [
+      {
+        "date": "2013",
+        "value1": 4000,
+        "value2": 2800
+      },
+      {
+        "date": "2014",
+        "value1": 4000,
+        "value2": 2800
+      },
+      {
+        "date": "2015",
+        "value1": 4000,
+        "value2": 2800
+      },
+      {
+        "date": "2016",
+        "value1": 4500,
+        "value2": 3000
+      },
+      {
+        "date": "2017",
+        "value1": 5000,
+        "value2": 3000
+      },
+      {
+        "date": "2018",
+        "value1": 5500,
+        "value2": 3500
+      },
+      {
+        "date": "2019",
+        "value1": 6000,
+        "value2": 4000
+      },
+      {
+        "date": "2020",
+        "value1": 6500,
+        "value2": 4500
+      },
+      {
+        "date": "2021",
+        "value1": 5000,
+        "value2": 3000
+      },
+      {
+        "date": "2022",
+        "value1": 5500,
+        "value2": 3500
+      },
+      {
+        "date": "2023",
+        "value1": 6000,
+        "value2": 4000
+      },
+      {
+        "date": "2024",
+        "value1": 6500,
+        "value2": 4500
+      }
+    ]
+  },
+  "products": [
+    {
+      "name": "Copier",
+      "productCode": "1004312261",
+      "category": "Tablets",
+      "brandName": "Microsoft",
+      "brandColor": "#2563EB",
+      "price": "$401.51",
+      "stockStatus": "Available",
+      "stockQuantity": "3.69k stock",
+      "views": "86.54k",
+      "viewsChange": "3.81%",
+      "viewsChangeType": "increase",
+      "id": "1"
+    },
+    {
+      "name": "Clock",
+      "productCode": "2550803414",
+      "category": "Tablets",
+      "brandName": "Google",
+      "brandColor": "#34A853",
+      "price": "$465.43",
+      "stockStatus": "Available",
+      "stockQuantity": "8.89k stock",
+      "views": "23.34k",
+      "viewsChange": "2.44%",
+      "viewsChangeType": "increase",
+      "id": "2"
+    },
+    {
+      "name": "Curling iron",
+      "productCode": "6366797028",
+      "category": "Gaming consoles",
+      "brandName": "Pinterest",
+      "brandColor": "#E60023",
+      "price": "$922.90",
+      "stockStatus": "Not available",
+      "stockQuantity": "0 stock",
+      "views": "44.03k",
+      "viewsChange": "5.95%",
+      "viewsChangeType": "decrease",
+      "id": "3"
+    },
+    {
+      "name": "Curling iron",
+      "productCode": "5672325723",
+      "category": "Tablets",
+      "brandName": "Pfizer",
+      "brandColor": "#0C3C78",
+      "price": "$196.74",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "2.11k stock",
+      "views": "59.44k",
+      "viewsChange": "0.61%",
+      "viewsChangeType": "increase",
+      "id": "4"
+    },
+    {
+      "name": "Bulb",
+      "productCode": "9261678171",
+      "category": "Smartphones",
+      "brandName": "Pfizer",
+      "brandColor": "#0C3C78",
+      "price": "$950.42",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "6.58k stock",
+      "views": "60.89k",
+      "viewsChange": "4.85%",
+      "viewsChangeType": "increase",
+      "id": "5"
+    },
+    {
+      "name": "Backup charger",
+      "productCode": "2826149864",
+      "category": "Drones",
+      "brandName": "Behance",
+      "brandColor": "#0057FF",
+      "price": "$830.35",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "9.68k stock",
+      "views": "35.43k",
+      "viewsChange": "3.90%",
+      "viewsChangeType": "increase",
+      "id": "6"
+    },
+    {
+      "name": "Bulb",
+      "productCode": "3828918900",
+      "category": "Cameras",
+      "brandName": "Microsoft",
+      "brandColor": "#2563EB",
+      "price": "$131.07",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "4.64k stock",
+      "views": "49.59k",
+      "viewsChange": "4.54%",
+      "viewsChangeType": "decrease",
+      "id": "7"
+    },
+    {
+      "name": "Copier",
+      "productCode": "6184796083",
+      "category": "Drones",
+      "brandName": "Pinterest",
+      "brandColor": "#E60023",
+      "price": "$679.94",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "1.87k stock",
+      "views": "69.29k",
+      "viewsChange": "7.69%",
+      "viewsChangeType": "decrease",
+      "id": "8"
+    },
+    {
+      "name": "Air conditioner",
+      "productCode": "3366359679",
+      "category": "Tablets",
+      "brandName": "Microsoft",
+      "brandColor": "#2563EB",
+      "price": "$309.80",
+      "stockStatus": "Available",
+      "stockQuantity": "2.04k stock",
+      "views": "22.23k",
+      "viewsChange": "6.62%",
+      "viewsChangeType": "decrease",
+      "id": "9"
+    },
+    {
+      "name": "Ceiling fan",
+      "productCode": "5552747758",
+      "category": "Tablets",
+      "brandName": "Vercel",
+      "brandColor": "#111827",
+      "price": "$100.91",
+      "stockStatus": "Not available",
+      "stockQuantity": "0 stock",
+      "views": "29.63k",
+      "viewsChange": "8.50%",
+      "viewsChangeType": "decrease",
+      "id": "10"
+    },
+    {
+      "name": "Copier",
+      "productCode": "2819270689",
+      "category": "Tablets",
+      "brandName": "Microsoft",
+      "brandColor": "#2563EB",
+      "price": "$817.30",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "7.84k stock",
+      "views": "47.13k",
+      "viewsChange": "5.21%",
+      "viewsChangeType": "increase",
+      "id": "11"
+    },
+    {
+      "name": "Clock",
+      "productCode": "8521322517",
+      "category": "Tablets",
+      "brandName": "Google",
+      "brandColor": "#34A853",
+      "price": "$975.04",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "5.25k stock",
+      "views": "77.26k",
+      "viewsChange": "9.89%",
+      "viewsChangeType": "increase",
+      "id": "12"
+    },
+    {
+      "name": "Curling iron",
+      "productCode": "5171050640",
+      "category": "Gaming consoles",
+      "brandName": "Pinterest",
+      "brandColor": "#E60023",
+      "price": "$510.01",
+      "stockStatus": "Not available",
+      "stockQuantity": "0 stock",
+      "views": "94.97k",
+      "viewsChange": "1.17%",
+      "viewsChangeType": "increase",
+      "id": "13"
+    },
+    {
+      "name": "Curling iron",
+      "productCode": "9682259518",
+      "category": "Tablets",
+      "brandName": "Pfizer",
+      "brandColor": "#0C3C78",
+      "price": "$114.22",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "7.73k stock",
+      "views": "27.71k",
+      "viewsChange": "3.68%",
+      "viewsChangeType": "increase",
+      "id": "14"
+    },
+    {
+      "name": "Bulb",
+      "productCode": "1953496041",
+      "category": "Smartphones",
+      "brandName": "Pfizer",
+      "brandColor": "#0C3C78",
+      "price": "$344.90",
+      "stockStatus": "Not available",
+      "stockQuantity": "0 stock",
+      "views": "67.11k",
+      "viewsChange": "7.79%",
+      "viewsChangeType": "increase",
+      "id": "15"
+    },
+    {
+      "name": "Backup charger",
+      "productCode": "6898134680",
+      "category": "Drones",
+      "brandName": "Behance",
+      "brandColor": "#0057FF",
+      "price": "$801.45",
+      "stockStatus": "Not available",
+      "stockQuantity": "0 stock",
+      "views": "79.81k",
+      "viewsChange": "7.89%",
+      "viewsChangeType": "decrease",
+      "id": "16"
+    },
+    {
+      "name": "Bulb",
+      "productCode": "1273088346",
+      "category": "Cameras",
+      "brandName": "Microsoft",
+      "brandColor": "#2563EB",
+      "price": "$706.28",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "4.81k stock",
+      "views": "85.18k",
+      "viewsChange": "7.86%",
+      "viewsChangeType": "increase",
+      "id": "17"
+    },
+    {
+      "name": "Copier",
+      "productCode": "2417475801",
+      "category": "Drones",
+      "brandName": "Pinterest",
+      "brandColor": "#E60023",
+      "price": "$981.48",
+      "stockStatus": "Limited Supply",
+      "stockQuantity": "5.80k stock",
+      "views": "44.99k",
+      "viewsChange": "7.00%",
+      "viewsChangeType": "increase",
+      "id": "18"
+    },
+    {
+      "name": "Air conditioner",
+      "productCode": "1501826040",
+      "category": "Tablets",
+      "brandName": "Microsoft",
+      "brandColor": "#2563EB",
+      "price": "$870.12",
+      "stockStatus": "Available",
+      "stockQuantity": "1.80k stock",
+      "views": "40.14k",
+      "viewsChange": "4.58%",
+      "viewsChangeType": "decrease",
+      "id": "19"
+    },
+    {
+      "name": "Ceiling fan",
+      "productCode": "1232320482",
+      "category": "Tablets",
+      "brandName": "Vercel",
+      "brandColor": "#111827",
+      "price": "$723.20",
+      "stockStatus": "Not available",
+      "stockQuantity": "0 stock",
+      "views": "5.89k",
+      "viewsChange": "2.00%",
+      "viewsChangeType": "increase",
+      "id": "20"
+    },
+    {
+      "id": "398a",
+      "name": "Shahin Ahmed",
+      "brandName": "one",
+      "category": "game",
+      "price": "20",
+      "stockQuantity": "3",
+      "stockStatus": "Available",
+      "views": "0",
+      "viewsChange": "0%",
+      "viewsChangeType": "increase"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "name": "Konnor Guzman",
+      "date": "Dec 21, 2021 - 08:05",
+      "amount": 660.22,
+      "avatar": "KG",
+      "color": "bg-gray-700"
+    },
+    {
+      "id": "2",
+      "name": "Henry Curtis",
+      "date": "Dec 19, 2021 - 11:55",
+      "amount": 33.63,
+      "avatar": "HC",
+      "color": "bg-gray-700"
+    },
+    {
+      "id": "3",
+      "name": "Derrick Simmons",
+      "date": "Dec 16, 2021 - 14:45",
+      "amount": 674.63,
+      "avatar": "DS",
+      "color": "bg-gray-800"
+    },
+    {
+      "id": "4",
+      "name": "Kartina West",
+      "date": "Dec 13, 2021 - 11:30",
+      "amount": 547.63,
+      "avatar": "KW",
+      "color": "bg-gray-700"
+    },
+    {
+      "id": "5",
+      "name": "Samantha Shelton",
+      "date": "Dec 10, 2021 - 09:41",
+      "amount": 736.24,
+      "avatar": "SS",
+      "color": "bg-gray-700"
+    },
+    {
+      "id": "6",
+      "name": "Joe Perkins",
+      "date": "Dec 06, 2021 - 11:41",
+      "amount": 369.6,
+      "avatar": "JP",
+      "color": "bg-orange-500 text-white"
+    },
+    {
+      "id": "7",
+      "name": "John Parker",
+      "date": "Dec 09, 2021 - 23:20",
+      "amount": 241,
+      "avatar": "JP",
+      "color": "bg-gray-700"
+    }
+  ],
+  "socialItems": [
+    {
+      "id": "1",
+      "name": "Instagram",
+      "icon": "Instagram",
+      "views": "34.36k",
+      "revenue": "$5.17k"
+    },
+    {
+      "id": "2",
+      "name": "Facebook",
+      "icon": "Facebook",
+      "views": "24.62k",
+      "revenue": "$4.32k"
+    },
+    {
+      "id": "3",
+      "name": "Tiktok",
+      "icon": "Tiktok",
+      "views": "17.36k",
+      "revenue": "$3.47k"
+    },
+    {
+      "id": "4",
+      "name": "Twitter",
+      "icon": "Twitter",
+      "views": "49.32k",
+      "revenue": "$1.26k"
+    },
+    {
+      "id": "5",
+      "name": "Pinterest",
+      "icon": "Pinterest",
+      "views": "6.92k",
+      "revenue": "$926"
+    },
+    {
+      "id": "6",
+      "name": "Discord",
+      "icon": "Discord",
+      "views": "639",
+      "revenue": "$517"
+    },
+    {
+      "id": "7",
+      "name": "Youtube",
+      "icon": "Youtube",
+      "views": "391",
+      "revenue": "$268"
+    }
+  ],
+  "countryItems": [
+    {
+      "id": "1",
+      "code": "ES",
+      "name": "Spain",
+      "green": "2.37k",
+      "orange": "36.52k"
+    },
+    {
+      "id": "2",
+      "code": "AU",
+      "name": "Australia",
+      "green": "8.65k",
+      "orange": "94.11k"
+    },
+    {
+      "id": "3",
+      "code": "IT",
+      "name": "Italy"
+    }
+  ],
+  "localProducts": [
+    {
+      "id": "P-0001",
+      "name": "Sneakers",
+      "sku": "SNK-001",
+      "brand": "Flexo",
+      "category": "Footwear",
+      "price": 99.99,
+      "status": "Active",
+      "stock": 42,
+      "description": "Stylish black/white sneakers for casual wear.",
+      "image": "/sneakers.webp"
+    },
+    {
+      "id": "P-0002",
+      "name": "T‑Shirt",
+      "sku": "TEE-001",
+      "brand": "Cottonly",
+      "category": "Clothing",
+      "price": 19.99,
+      "status": "Active",
+      "stock": 120,
+      "description": "Soft cotton tee with classic fit.",
+      "image": "/t-shirt.jpg"
+    },
+    {
+      "id": "P-0003",
+      "name": "Wireless Mouse",
+      "sku": "MSE-101",
+      "brand": "LogiTech",
+      "category": "Electronics",
+      "price": 24.5,
+      "status": "Active",
+      "stock": 80,
+      "description": "2.4Ghz ergonomic mouse with silent clicks.",
+      "image": "/wireless-mouse.webp"
+    },
+    {
+      "id": "P-0004",
+      "name": "USB‑C Cable 1m",
+      "sku": "CAB-1M",
+      "brand": "BaseUS",
+      "category": "Accessories",
+      "price": 6.5,
+      "status": "Low Stock",
+      "stock": 12,
+      "description": "Fast‑charge braided cable.",
+      "image": ""
+    },
+    {
+      "id": "P-0005",
+      "name": "Ceramic Mug",
+      "sku": "MUG-200",
+      "brand": "Homey",
+      "category": "Home",
+      "price": 8.99,
+      "status": "Active",
+      "stock": 55,
+      "description": "Dishwasher‑safe 350ml ceramic mug.",
+      "image": "/usb-c-cable-1m.jpg"
+    },
+    {
+      "id": "P-0006",
+      "name": "Face Serum 30ml",
+      "sku": "BEA-030",
+      "brand": "GlowUp",
+      "category": "Beauty",
+      "price": 14.99,
+      "status": "Active",
+      "stock": 33,
+      "description": "Vitamin C brightening serum.",
+      "image": ""
+    },
+    {
+      "id": "P-0007",
+      "name": "Notebook A5",
+      "sku": "NTB-A5",
+      "brand": "PaperFox",
+      "category": "Other",
+      "price": 3.99,
+      "status": "Draft",
+      "stock": 200,
+      "description": "A5 ruled notebook, 120 pages.",
+      "image": ""
+    },
+    {
+      "id": "P-0008",
+      "name": "Bluetooth Speaker",
+      "sku": "SPK-300",
+      "brand": "Soundo",
+      "category": "Electronics",
+      "price": 39.0,
+      "status": "Out of Stock",
+      "stock": 0,
+      "description": "Portable BT 5.3 speaker, 10h playtime.",
+      "image": ""
+    }
+  ]
+}
